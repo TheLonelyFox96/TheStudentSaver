@@ -19,6 +19,11 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //Set Dynamic Title Bar
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,7 +32,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

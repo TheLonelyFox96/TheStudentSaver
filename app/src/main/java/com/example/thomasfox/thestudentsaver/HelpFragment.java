@@ -18,6 +18,9 @@ public class HelpFragment extends Fragment{
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        // Set title bar
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Help");
         myview = inflater.inflate(R.layout.activity_help,container,false);
         return myview;
     }

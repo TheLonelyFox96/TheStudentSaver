@@ -18,7 +18,17 @@ public class DiscountFragment extends Fragment{
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+        // Set title bar
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Discounts");
+
+
         myview = inflater.inflate(R.layout.activity_discounts,container,false);
         return myview;
+
+
     }
+
+
 }

@@ -47,6 +47,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        // Set title bar
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Map");
         super.onViewCreated(view, savedInstanceState);
 
         mMapView = (MapView) mView.findViewById(R.id.mapView);
