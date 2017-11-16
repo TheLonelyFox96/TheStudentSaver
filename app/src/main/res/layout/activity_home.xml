@@ -38,8 +38,7 @@
                 android:layout_marginTop="@dimen/md_keylines"
                 android:layout_marginBottom="@dimen/md_keylines"
                 android:layout_marginRight="@dimen/md_keylines"
-                android:text="Welcome back to StudentSaver!
-                Your one stop place to getting great deals."
+                android:text="Welcome back to StudentSaver! Your one stop place to getting great deals."
                 android:ellipsize="end"
                 android:singleLine="false"
                 android:textColor="@color/dark_grey"
