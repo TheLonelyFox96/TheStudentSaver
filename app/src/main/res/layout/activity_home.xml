@@ -25,7 +25,7 @@
                 android:layout_height="@dimen/card_title_height"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="@dimen/md_keylines"
-                android:text="Welcome Back!"
+                android:text="@string/welcome_card_title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@color/button_grey" />
 
@@ -38,7 +38,7 @@
                 android:layout_marginTop="@dimen/md_keylines"
                 android:layout_marginBottom="@dimen/md_keylines"
                 android:layout_marginRight="@dimen/md_keylines"
-                android:text="Welcome back to StudentSaver! Your one stop place to getting great deals."
+                android:text="@string/welcome_card_description"
                 android:ellipsize="end"
                 android:singleLine="false"
                 android:textColor="@color/dark_grey"

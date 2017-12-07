@@ -1,6 +1,7 @@
 package com.example.thomasfox.thestudentsaver;
 
 import android.app.FragmentManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,8 +13,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+
+
+
+
+
 
     //Set Dynamic Title Bar
     public void setActionBarTitle(String title){
@@ -42,6 +58,8 @@ public class MainActivity extends AppCompatActivity
         /* Sets Home Fragment to open once app is loaded rather than the blank main activity */
         if (savedInstanceState == null) {
             navigationView.getMenu().performIdentifierAction(R.id.nav_HomeFragment, 0);
+
+
         }
 
 
@@ -132,6 +150,29 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return true; }
+
+
+
+    @Override
+    public void onConnected(Bundle bundle) {
+
     }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+
+
+
 }
+
+
+
+
