@@ -1,12 +1,9 @@
 package com.example.thomasfox.thestudentsaver;
 
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,8 +13,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+
+
+
+
+
+
+    //Set Dynamic Title Bar
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +44,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -42,9 +58,21 @@ public class MainActivity extends AppCompatActivity
         /* Sets Home Fragment to open once app is loaded rather than the blank main activity */
         if (savedInstanceState == null) {
             navigationView.getMenu().performIdentifierAction(R.id.nav_HomeFragment, 0);
-        }
-    }
 
+
+        }
+
+
+        //Set to false to avoid overwriting users selected settings.
+        //PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
+      /*  SharedPreferences sharedPref =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean switchPref = sharedPref.getBoolean
+                (SettingsActivity.KEY_PREF_FASHION_SWITCH, false);
+        Toast.makeText(this, switchPref.toString(), Toast.LENGTH_SHORT).show(); */
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -72,9 +100,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_SettingsFragment) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.contentframe, new SettingsFragment())
-                    .commit();
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
         }
         else if (id == R.id.nav_HelpFragment){
             fragmentManager.beginTransaction()
@@ -109,9 +137,9 @@ public class MainActivity extends AppCompatActivity
         }
 
         else if (id == R.id.nav_SettingsFragment) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.contentframe, new SettingsFragment())
-                    .commit();
+             Intent intent = new Intent(this, SettingsActivity.class);
+             startActivity(intent);
+             return true;
         }
 
          else if (id == R.id.nav_HelpFragment) {
@@ -122,6 +150,29 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return true; }
+
+
+
+    @Override
+    public void onConnected(Bundle bundle) {
+
     }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
+    }
+
+
+
 }
+
+
+
+

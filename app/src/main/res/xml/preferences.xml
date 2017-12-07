@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="Fashion_switch"
+        android:summary="Toggle On/Off Fashion Notifications"
+        android:title="Fashion" />
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="Technology_switch"
+        android:summary="Toggle On/Off Technology Notifications"
+        android:title="Technology" />
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="Food_switch"
+        android:summary="Toggle On/Off Food Notifications"
+        android:title="Food" />
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="Beauty_switch"
+        android:summary="Toggle On/Off Beauty Notifications"
+        android:title="Beauty" />
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="Lifestyle_switch"
+        android:summary="Toggle On/Off Lifestyle Notifications"
+        android:title="Lifestyle" />
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="All_switch"
+        android:summary="Toggle On/Off All Notifications"
+        android:title="All" />
+</PreferenceScreen>
