@@ -11,7 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.support.v4.app.DialogFragment;
-
+import android.view.View.OnClickListener;
+import android.widget.EditText;
 
 
 /**
@@ -24,7 +25,7 @@ public class HelpFragment extends Fragment {
     @Nullable
     Button about_button;
     Button feedback_button;
-    FragmentManager feedback = getActivity().getFragmentManager();
+
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -37,35 +38,66 @@ public class HelpFragment extends Fragment {
         about_button = (Button) myview.findViewById(R.id.about_button);
         feedback_button = (Button) myview.findViewById(R.id.feedback_button);
 
-        AboutUsDialog();
-        FeedbackDialog();
+
+        about_button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+
+                // set title
+                alertDialogBuilder.setTitle("About Us");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage(R.string.aboutUS)
+                        .setCancelable(false)
+                        .setPositiveButton("Close",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+            }
+        });
+
+        feedback_button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+
+                // set title
+                alertDialogBuilder.setTitle("Feedback");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Please enter feedback below")
+                        .setCancelable(false);
+                        final EditText feedbackInput = new EditText(getContext());
+                        alertDialogBuilder.setView(feedbackInput)
+                        .setPositiveButton("Submit",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // show it
+                alertDialog.show();
+            }
+        });
+
 
         return myview;
-
-    }
-
-    private void AboutUsDialog() {
-        // Activate dialog for About Us button when clicked.
-        about_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                FragmentManager about = getActivity().getFragmentManager();
-                AboutUsFragment AboutUsFragment = new AboutUsFragment();
-                AboutUsFragment.show(AboutUsFragment, "About Us Dialog");
-            }
-        });
     }
 
 
-    private void FeedbackDialog() {
-        // Activate dialog for Feedback button when clicked.
-        feedback_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                FeedbackFragment feedbackFragment = new FeedbackFragment();
-                // Show Alert DialogFragment
-                feedbackFragment.show(feedback, "Feedback Fragment");
-            }
-        });
-    }
+
+
 
 
 

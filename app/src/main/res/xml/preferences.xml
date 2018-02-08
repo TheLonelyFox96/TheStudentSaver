@@ -34,6 +34,7 @@
         android:title="Lifestyle" />
 
     <android.support.v7.preference.SwitchPreferenceCompat
+        android:id="@+id/All_switch"
         android:defaultValue="true"
         android:key="All_switch"
         android:summary="Toggle On/Off All Notifications"

@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setTitle(title);
     }
 
+    //Create of the page on load.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,18 +60,8 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             navigationView.getMenu().performIdentifierAction(R.id.nav_HomeFragment, 0);
 
-
         }
 
-
-        //Set to false to avoid overwriting users selected settings.
-        //PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-
-      /*  SharedPreferences sharedPref =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        Boolean switchPref = sharedPref.getBoolean
-                (SettingsActivity.KEY_PREF_FASHION_SWITCH, false);
-        Toast.makeText(this, switchPref.toString(), Toast.LENGTH_SHORT).show(); */
 
     }
     @Override
@@ -83,6 +74,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Creation of the option menu button appearing on the top right of the screen.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -92,13 +84,10 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         FragmentManager fragmentManager = getFragmentManager();
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //Control for when one of the menu items is clicked.
         if (id == R.id.nav_SettingsFragment) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
@@ -112,6 +101,8 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+    //Options and control for when one of the navigation menu items are clicked.
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
