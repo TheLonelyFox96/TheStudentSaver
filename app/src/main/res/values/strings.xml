@@ -11,11 +11,42 @@
     <!-- Welcome Card -->
 
     <string name="welcome_card_title"> Welcome Back!</string>
-    <string name="welcome_card_description">Welcome back to StudentSaver! The app to help get you great deals.</string>
+    <string name="welcome_card_description">This is StudentSaver! The app to help get you great deals.</string>
 
 
     <!-- Discount Page Text -->
     <string name="DiscountCode">Discount Code</string>
     <string name="clientName">Client Name</string>
     <string name="description">Description</string>
+
+    <!-- Notification Texts -->
+    <string name="Mcdonalds">Enjoy a free Cheeseburger, Mayo Chicken or McFlurry Original® when you order an Extra Value or Wrap Meal at McDonalds</string>
+    <string name="TopShop">Enjoy 10% Student Discount when you shop with Topshop in-store</string>
+    <string name="Accessorize">Enjoy up to 30% Off sale items + an extra 10% Off when you shop with Accessorize in-store.</string>
+    <string name="AnnSummers">Enjoy 10% Student Discount when you shop with Ann Summers in-store.</string>
+    <string name="Schuh">Enjoy 10% Student Discount when you shop with Schuh in-store.</string>
+    <string name="Select">Enjoy 20% Student Discount when you shop with Select in-store.</string>
+    <string name="USC">Enjoy 10% Student Discount when you shop with USC in-store.</string>
+    <string name="Burton">Enjoy 10% Student Discount when you shop with Burton in-store.</string>
+    <string name="FootAsylum">Enjoy 10% Student Discount when you shop with FootAsylum in-store.</string>
+    <string name="Oasis">Enjoy 10% Student Discount when you shop with Oasis in-store.</string>
+
+
+
+    <!-- Help Page -->
+    <string name="aboutUS">Final Year Project application, designed and built by Thomas Fox. The aim is to provide students will
+        real time notifications about nearby discounts in their favourite stores.</string>
+
+    <string name="FAQ1_Title">How to view discounts?</string>
+    <string name="FAQ1_Description">Go to the menu button in the top left of the screen, and select Discounts.
+        From here you can now see and view all discounts available.</string>
+
+    <string name="FAQ2_Title">How to turn off notifications?</string>
+    <string name="FAQ2_Description">Select the menu button in the top left and choose settings. From here you can tap the toggle switch to turn off
+    notifications for selected categories. There is also the option to turn all notifications off.</string>
+
+    <string name="FAQ3_Title">How to find my location?</string>
+    <string name="FAQ3_Description">By going to the map page via the menu, you can select the pointer button that appears in the top right of the screen
+    and it will zoom into your location. If you are near any shops with a discount, they will appear with a red pin on them.</string>
+
 </resources>

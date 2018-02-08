@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,6 +22,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,7 @@ public class DiscountFragment extends Fragment{
     private List<Discounts> listDiscounts;
     private DiscountRecycleAdapter DiscountRecyclerAdapter;
     private DatabaseHelper DatabaseHelper;
+
     View myview;
 
     @Nullable
@@ -56,9 +59,9 @@ public class DiscountFragment extends Fragment{
         myview = inflater.inflate(R.layout.activity_discount_list, container, false);
 
 
+
         initViews();
         initObjects();
-
         return myview;
     }
 
@@ -76,24 +79,19 @@ public class DiscountFragment extends Fragment{
 
 
 
-
-
-
-
-
     /**
      * This method is to initialize objects to be used
      */
     private void initObjects() {
         listDiscounts = new ArrayList<Discounts>();
-        DiscountRecyclerAdapter = new DiscountRecycleAdapter(listDiscounts);
-
+        DiscountRecyclerAdapter = new DiscountRecycleAdapter(listDiscounts, getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerViewDiscount.setLayoutManager(mLayoutManager);
         recyclerViewDiscount.setItemAnimator(new DefaultItemAnimator());
         recyclerViewDiscount.setHasFixedSize(true);
         recyclerViewDiscount.setAdapter(DiscountRecyclerAdapter);
         DatabaseHelper = new DatabaseHelper(getContext());
+
 
 
 
@@ -110,8 +108,6 @@ public class DiscountFragment extends Fragment{
     private void getDataFromSQLite() {
         listDiscounts.clear();
              listDiscounts.addAll(DatabaseHelper.getAllDiscounts());
-        System.out.print(listDiscounts);
-
 
         // AsyncTask is used that SQLite operation not blocks the UI Thread.
 //        new AsyncTask<Void, Void, Void>() {

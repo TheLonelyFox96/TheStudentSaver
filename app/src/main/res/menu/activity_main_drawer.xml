@@ -26,7 +26,7 @@
         <menu>
             <item
                 android:id="@+id/nav_SettingsFragment"
-                android:icon="@drawable/ic_setting_light"
+                android:icon="@drawable/ic_settings"
                 android:title="Settings" />
             <item
                 android:id="@+id/nav_HelpFragment"
