@@ -35,8 +35,8 @@ public class HelpFragment extends Fragment {
         myview = inflater.inflate(R.layout.activity_help, container, false);
 
         // Buttons defined for page.
-        about_button = (Button) myview.findViewById(R.id.about_button);
-        feedback_button = (Button) myview.findViewById(R.id.feedback_button);
+        about_button = myview.findViewById(R.id.about_button);
+        feedback_button = myview.findViewById(R.id.feedback_button);
 
 
         about_button.setOnClickListener(new OnClickListener() {

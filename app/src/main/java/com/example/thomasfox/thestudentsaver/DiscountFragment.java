@@ -74,7 +74,7 @@ public class DiscountFragment extends Fragment{
      */
     private void initViews() {
 
-        recyclerViewDiscount = (RecyclerView) myview.findViewById(R.id.recyclerViewDiscount);
+        recyclerViewDiscount = myview.findViewById(R.id.recyclerViewDiscount);
     }
 
 
@@ -102,29 +102,11 @@ public class DiscountFragment extends Fragment{
      * This method is to fetch all user records from SQLite
      */
 
-    // This is an issue
-    // Having trouble getting data from non-static context
     @SuppressLint("StaticFieldLeak")
     private void getDataFromSQLite() {
         listDiscounts.clear();
              listDiscounts.addAll(DatabaseHelper.getAllDiscounts());
 
-        // AsyncTask is used that SQLite operation not blocks the UI Thread.
-//        new AsyncTask<Void, Void, Void>() {
-//            @Override
-//            protected Void doInBackground(Void... params) {
-//                listDiscounts.clear();
-//                listDiscounts.addAll(DatabaseHelper.getAllDiscounts());
-//
-//               return null;
-//            }
-//
-//            @Override
-//            protected void onPostExecute(Void aVoid) {
-//                super.onPostExecute(aVoid);
-//                DiscountRecyclerAdapter.notifyDataSetChanged();
-//            }
-//        }.execute();
     }
 
 

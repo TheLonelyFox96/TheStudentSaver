@@ -12,12 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingClient;
 import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -28,6 +32,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    private static final String TAG = "";
+    MapView mMapView;
+    GoogleMap mGoogleMap;
+    protected ArrayList<Geofence> mGeofenceList;
+    private PendingIntent pendingIntent;
+    private GeofencingRequest geofencingRequest;
+    private GeofencingClient mGeofencingClient;
+    protected GoogleApiClient mGoogleApiClient;
 
 
 
@@ -43,17 +55,17 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getFragmentManager();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         /* Sets Home Fragment to open once app is loaded rather than the blank main activity */
@@ -63,10 +75,20 @@ public class MainActivity extends AppCompatActivity
         }
 
 
+
+
     }
+
+
+
+
+
+
+
+
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -77,7 +99,6 @@ public class MainActivity extends AppCompatActivity
     // Creation of the option menu button appearing on the top right of the screen.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -121,6 +142,7 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction()
                     .replace(R.id.contentframe, new MapFragment())
                     .commit();
+
         } else if (id == R.id.nav_DiscountFragment) {
             fragmentManager.beginTransaction()
                     .replace(R.id.contentframe, new DiscountFragment())
@@ -139,7 +161,7 @@ public class MainActivity extends AppCompatActivity
                      .commit();
          }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true; }
 

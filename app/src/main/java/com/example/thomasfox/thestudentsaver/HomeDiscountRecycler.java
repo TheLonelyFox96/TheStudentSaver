@@ -116,19 +116,17 @@ public class HomeDiscountRecycler extends RecyclerView.Adapter<HomeDiscountRecyc
 
         public AppCompatTextView textViewClientName;
         public AppCompatTextView textViewDescription;
-//        public AppCompatTextView textViewDiscountCode;
         public ImageView image_discount;
 
         public DiscountsViewHolder(View view) {
             super(view);
-            textViewClientName = (AppCompatTextView) view.findViewById(R.id.textViewClientName);
-            textViewDescription = (AppCompatTextView) view.findViewById(R.id.textViewDescription);
-//            textViewDiscountCode = (AppCompatTextView) view.findViewById(R.id.textViewDiscountCode);
-            image_discount = (ImageView) view.findViewById(R.id.image_discount);
+            textViewClientName = view.findViewById(R.id.textViewClientName);
+            textViewDescription = view.findViewById(R.id.textViewDescription);
+            image_discount = view.findViewById(R.id.image_discount);
 
 
 
-            moredetails_button = (Button)view.findViewById(R.id.moredetails);
+            moredetails_button = view.findViewById(R.id.moredetails);
 
             moredetails_button.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private String INSERT2 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('2', '10% off', 'Enjoy 10% Student Discount when you shop with Topshop in-store.', 'Show Student ID for Discount', 'Topshop', '01/01/2018', '01/01/2040');";
 
     //Accessorize
-    private String INSERT3 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('3', '30% off', 'Enjoy up to 30% Off sale items + an extra 10% Off when you shop with Accessorize in-store.', 'Show Student ID for Discount', 'Accessorize', '01/01/2018', '26/11/2018');";
+    private String INSERT3 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('3', '30% off', 'Enjoy up to 30% Off sale items + an extra 10% Off when you shop with Accessorize in-store.', '0P2334ERMQ', 'Accessorize', '01/01/2018', '26/11/2018');";
 
     //Ann Summers
     private String INSERT4 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('4', '10% off', 'Enjoy 10% Student Discount when you shop with Ann Summers in-store.', 'Show Student ID for Discount', 'Ann Summers', '01/01/2018', '01/01/2040');";
@@ -69,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private String INSERT6 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('6', '10% off', 'Enjoy 10% Student Discount when you shop with Oasis in-store.', 'Show Student ID for Discount', 'Oasis', '01/01/2018', '01/01/2040');";
 
     //USC
-    private String INSERT7 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('7', '10% off', 'Enjoy 10% Student Discount when you shop with USC in-store.', 'Show Student ID for Discount', 'USC', '10/01/2018', '01/01/2040');";
+    private String INSERT7 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('7', '10% off', 'Enjoy 10% Student Discount when you shop with USC in-store.', 'X234RTY556', 'USC', '10/01/2018', '01/01/2040');";
 
     //FootAsylum
     private String INSERT8 = "INSERT INTO " + DISCOUNT_TABLE_NAME + "  VALUES ('8', '10% off', 'Enjoy 10% Student Discount when you shop with FootAsylum in-store.', 'Show Student ID for Discount', 'FootAsylum', '10/01/2018', '01/01/2040');";
@@ -113,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Get All Discounts From Database To Display On Discount Page
+    /** Excution of Query 1 - Getting ALL discounts back ***/
 
     public List<Discounts> getAllDiscounts() {
         // array of columns to fetch
@@ -159,10 +159,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return discountList;
     }
+    /*** END OF QUERY 1 ***/
 
 
-    // Latest Discounts To Display On Homepage
-
+    /*** EXECUTION OF QUERY 2 - GET NEWEST DISCOUNTS ***/
 
     public List<Discounts> getNewDiscounts() {
         // array of columns to fetch
@@ -212,6 +212,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return newdiscountList;
     }
+
+    /*** END OF QUERY 2 ***/
 
 
 

@@ -20,7 +20,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="About" />
+        android:text="About"
+        android:textColor="@color/dark_grey"/>
 
 
     <Button
@@ -31,7 +32,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/about_button"
-        android:text="Feedback" />
+        android:text="Feedback"
+        android:textColor="@color/dark_grey"/>
 
     <View
         android:layout_width="match_parent"
@@ -88,7 +90,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:text="@string/FAQ1_Title"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="@color/dark_grey"
                 android:textSize="20dp" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -102,7 +104,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="70dp"
             android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/dark_grey"
             android:text="@string/FAQ1_Description" />
 
         </RelativeLayout>
@@ -148,8 +150,8 @@
             android:layout_below="@+id/FAQ1_Description"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="70dp"
-            android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp"
+            android:textColor="@color/dark_grey"
             android:text="@string/FAQ2_Title"
             />
 
@@ -163,7 +165,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="70dp"
             android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/dark_grey"
             android:text="@string/FAQ2_Description"
             />
         </RelativeLayout>
@@ -206,8 +208,8 @@
             android:layout_below="@+id/FAQ2_Description"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="70dp"
-            android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
+            android:textSize="20dp"
+            android:textColor="@color/dark_grey"
             android:text="@string/FAQ3_Title"
             />
 
@@ -220,7 +222,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="70dp"
             android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/dark_grey"
             android:text="@string/FAQ3_Description"
              />
         </RelativeLayout>
