@@ -30,7 +30,7 @@
             android:paddingLeft="10dp"
             android:layout_weight="1"
             android:text="@string/clientName"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@color/dark_grey" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/textViewDescription"
@@ -41,7 +41,7 @@
             android:layout_weight="1"
             android:layout_below="@+id/textViewClientName"
             android:text="@string/description"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@color/dark_grey" />
 
 
 

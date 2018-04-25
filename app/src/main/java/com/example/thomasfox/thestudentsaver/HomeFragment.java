@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
      */
     private void initViews() {
 
-        recyclerViewNewDiscount = (RecyclerView) myview.findViewById(R.id.recyclerViewNewDiscount);
+        recyclerViewNewDiscount = myview.findViewById(R.id.recyclerViewNewDiscount);
 
     }
 

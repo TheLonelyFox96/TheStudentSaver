@@ -10,33 +10,39 @@
         android:defaultValue="true"
         android:key="Fashion_switch"
         android:summary="Toggle On/Off Fashion Notifications"
-        android:title="Fashion" />
+        android:title="Fashion"
+        android:textColor="@color/dark_grey"/>
 
     <android.support.v7.preference.SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="Technology_switch"
         android:summary="Toggle On/Off Technology Notifications"
-        android:title="Technology" />
+        android:title="Technology"
+        android:textColor="@color/dark_grey"/>
     <android.support.v7.preference.SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="Food_switch"
         android:summary="Toggle On/Off Food Notifications"
-        android:title="Food" />
+        android:title="Food"
+        android:textColor="@color/dark_grey"/>
     <android.support.v7.preference.SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="Beauty_switch"
         android:summary="Toggle On/Off Beauty Notifications"
-        android:title="Beauty" />
+        android:title="Beauty"
+        android:textColor="@color/dark_grey"/>
     <android.support.v7.preference.SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="Lifestyle_switch"
         android:summary="Toggle On/Off Lifestyle Notifications"
-        android:title="Lifestyle" />
+        android:title="Lifestyle"
+        android:textColor="@color/dark_grey"/>
 
     <android.support.v7.preference.SwitchPreferenceCompat
         android:id="@+id/All_switch"
         android:defaultValue="true"
         android:key="All_switch"
         android:summary="Toggle On/Off All Notifications"
-        android:title="All" />
+        android:title="All"
+        android:textColor="@color/dark_grey"/>
 </PreferenceScreen>

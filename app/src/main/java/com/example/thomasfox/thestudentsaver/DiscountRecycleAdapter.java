@@ -36,7 +36,7 @@ public class DiscountRecycleAdapter extends RecyclerView.Adapter<DiscountRecycle
 
     @Override
     public DiscountsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // inflating recycler item view
+
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_discount_recycler, parent, false);
 
@@ -50,9 +50,8 @@ public class DiscountRecycleAdapter extends RecyclerView.Adapter<DiscountRecycle
     public void onBindViewHolder(DiscountsViewHolder holder, int position) {
         String client = listDiscounts.get(position).getClientName();
         holder.textViewClientName.setText(listDiscounts.get(position).getClientName());
-
         holder.textViewDescription.setText(listDiscounts.get(position).getDescription());
-        //holder.textViewDiscountCode.setText(listDiscounts.get(position).getDiscountCode());
+
 
         String clientName = client.toLowerCase().replace("'", "");
         Integer image = null;
@@ -115,12 +114,12 @@ public class DiscountRecycleAdapter extends RecyclerView.Adapter<DiscountRecycle
 
         public DiscountsViewHolder(View view) {
             super(view);
-            textViewClientName = (AppCompatTextView) view.findViewById(R.id.textViewClientName);
-            textViewDescription = (AppCompatTextView) view.findViewById(R.id.textViewDescription);
+            textViewClientName = view.findViewById(R.id.textViewClientName);
+            textViewDescription = view.findViewById(R.id.textViewDescription);
             //textViewDiscountCode = (AppCompatTextView) view.findViewById(R.id.textViewDiscountCode);
-            image_discount = (ImageView) view.findViewById(R.id.image_discount);
+            image_discount = view.findViewById(R.id.image_discount);
 
-            moredetails_button = (Button)view.findViewById(R.id.moredetails);
+            moredetails_button = view.findViewById(R.id.moredetails);
 
             moredetails_button.setOnClickListener(new View.OnClickListener() {
                 @Override
